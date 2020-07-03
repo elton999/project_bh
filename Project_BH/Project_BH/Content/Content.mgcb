@@ -6,10 +6,84 @@
 /platform:DesktopGL
 /config:
 /profile:Reach
-/compress:False
+/compress:True
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\..\..\..\umbrella\UmbrellaToolKit.Pipeline\MonoGame.ContentPipeline.UmbrellaToolKit\MonoGame.ContentPipeline.UmbrellaToolKit\bin\Debug\MonoGame.ContentPipeline.UmbrellaToolKit.dll
 
 #---------------------------------- Content ---------------------------------#
+
+#begin Maps/Level_1.tmx
+/importer:TileMapImporter
+/processor:TileMapProcessor
+/build:Maps/Level_1.tmx
+
+#begin Maps/Level_2.tmx
+/importer:TileMapImporter
+/processor:TileMapProcessor
+/build:Maps/Level_2.tmx
+
+#begin Maps/Level_3.tmx
+/importer:TileMapImporter
+/processor:TileMapProcessor
+/build:Maps/Level_3.tmx
+
+#begin Maps/Tileset/Tilemap.tsx
+/importer:TileSetImporter
+/processor:TileSetProcessor
+/build:Maps/Tileset/Tilemap.tsx
+
+#begin Sprites/player.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/player.png
+
+#begin Sprites/player/prototype_character.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/player/prototype_character.png
+
+#begin Sprites/player/prototype_character_json.json
+/importer:AsepriteImporter
+/processor:AsepriteProcessor
+/build:Sprites/player/prototype_character_json.json
+
+#begin Sprites/player/swordhitbox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/player/swordhitbox.png
+
+#begin Sprites/TileSet/tiles.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/TileSet/tiles.png
 
