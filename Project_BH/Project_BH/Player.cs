@@ -326,8 +326,8 @@ namespace Project_BH
                     _right = true;
                     if (_isGround)
                         this.CurrentAnimation = AnimationTypes.WALK;
-                    else
-                        this.CurrentAnimation = AnimationTypes.JUMP;
+                    //else
+                    //    this.CurrentAnimation = AnimationTypes.JUMP;
                 }
 
                 if (_isOnStairs && (_isUpingRight || _isDowningLeft))
@@ -364,8 +364,8 @@ namespace Project_BH
                     _right = false;
                     if (_isGround)
                         this.CurrentAnimation = AnimationTypes.WALK;
-                    else
-                        this.CurrentAnimation = AnimationTypes.JUMP;
+                    //else
+                    //    this.CurrentAnimation = AnimationTypes.JUMP;
                 }
 
                 if (_isOnStairs && (_isUpingRight || _isDowningLeft))
@@ -402,11 +402,15 @@ namespace Project_BH
                 _isPressJump = false;
 
             // atack
-            if (Keyboard.GetState().IsKeyDown(Keys.X) && !_isAtacking && _isGround)
+            if (Keyboard.GetState().IsKeyDown(Keys.X) && !_isAtacking)
             {
                 _isAtacking = true;
-                this.CurrentAnimation = AnimationTypes.ATACK;
                 this.CreateSwordHitBox();
+
+                if (_isGround)
+                    this.CurrentAnimation = AnimationTypes.ATACK;
+                else
+                    this.CurrentAnimation = AnimationTypes.JUMP_ATACK;
             }
 
             if(!_isOnStairs && !_goToStairs)
@@ -514,6 +518,19 @@ namespace Project_BH
             else if (this.CurrentAnimation == AnimationTypes.ATACK)
             {
                 this.AsepriteAnimation.Play(gameTime, "atack");
+
+                if (AsepriteAnimation.lastFrame)
+                {
+                    if (_isGround)
+                        this.CurrentAnimation = AnimationTypes.IDLE;
+                    else
+                        this.CurrentAnimation = AnimationTypes.JUMP;
+                    _isAtacking = false;
+                    this.RemoveSwordHitBox();
+                }
+            } else if (this.CurrentAnimation == AnimationTypes.JUMP_ATACK)
+            {
+                this.AsepriteAnimation.Play(gameTime, "jump_atack");
 
                 if (AsepriteAnimation.lastFrame)
                 {

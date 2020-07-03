@@ -41,12 +41,15 @@ namespace Project_BH.Gameplay.Enemies
                 this.RemoveFromScene = true;
         }
 
+        
         public override void Update(GameTime gameTime)
         {
             this.AsepriteAnimation.Play(gameTime, "idle");
             this.Body = this.AsepriteAnimation.Body;
+            this.VigiliantMode();
+            this.CheckDirection();
         }
-
+        
         public override void Draw(SpriteBatch spriteBatch)
         {
             this.DrawSprite(spriteBatch);

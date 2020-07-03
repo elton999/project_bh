@@ -10,7 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\..\..\umbrella\UmbrellaToolKit.Pipeline\MonoGame.ContentPipeline.UmbrellaToolKit\MonoGame.ContentPipeline.UmbrellaToolKit\bin\Debug\MonoGame.ContentPipeline.UmbrellaToolKit.dll
+/reference:..\bin\DesktopGL\AnyCPU\Debug\MonoGame.ContentPipeline.UmbrellaToolKit.dll
 
 #---------------------------------- Content ---------------------------------#
 
