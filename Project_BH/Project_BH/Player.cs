@@ -42,9 +42,11 @@ namespace Project_BH
             this.Sword.SetBoxCollision(this.World);
             this.Sword.CBody.Tag = "PlayerSword";
             this.Sword.CBody.BodyType = BodyType.Static;
+
             this.Sword.CBody.SetCollidesWith(Category.Cat1);
             this.Sword.DontCollisionWithTag.Add("Player");
             this.Sword.DontCollisionWithTag.Add("Knight");
+            this.Sword.DontCollisionWithTag.Add("Troll");
             this.World.Remove(this.Sword.CBody);
         }
 
@@ -310,8 +312,7 @@ namespace Project_BH
         {
             this.CheckGround();
             this.GoToStairs();
-
-
+            
             if (Keyboard.GetState().IsKeyDown(Keys.Right) && !_isAtacking)
             {
                 this.CheckWall();
@@ -509,41 +510,44 @@ namespace Project_BH
         private bool _isAtacking;
         public void Animation(GameTime gameTime)
         {
-            if (this.CurrentAnimation == AnimationTypes.IDLE)
-                this.AsepriteAnimation.Play(gameTime, "idle");
-            else if (this.CurrentAnimation == AnimationTypes.JUMP)
+            switch (this.CurrentAnimation)
             {
-                this.AsepriteAnimation.Play(gameTime, "jump");
-            }
-            else if (this.CurrentAnimation == AnimationTypes.ATACK)
-            {
-                this.AsepriteAnimation.Play(gameTime, "atack");
+                case AnimationTypes.IDLE:
+                    this.AsepriteAnimation.Play(gameTime, "idle");
+                    break;
+                case AnimationTypes.JUMP:
+                    this.AsepriteAnimation.Play(gameTime, "jump");
+                    break;
+                case AnimationTypes.ATACK:
+                    this.AsepriteAnimation.Play(gameTime, "atack");
 
-                if (AsepriteAnimation.lastFrame)
-                {
-                    if (_isGround)
-                        this.CurrentAnimation = AnimationTypes.IDLE;
-                    else
-                        this.CurrentAnimation = AnimationTypes.JUMP;
-                    _isAtacking = false;
-                    this.RemoveSwordHitBox();
-                }
-            } else if (this.CurrentAnimation == AnimationTypes.JUMP_ATACK)
-            {
-                this.AsepriteAnimation.Play(gameTime, "jump_atack");
+                    if (AsepriteAnimation.lastFrame)
+                    {
+                        if (_isGround)
+                            this.CurrentAnimation = AnimationTypes.IDLE;
+                        else
+                            this.CurrentAnimation = AnimationTypes.JUMP;
+                        _isAtacking = false;
+                        this.RemoveSwordHitBox();
+                    }
+                    break;
+                case AnimationTypes.JUMP_ATACK:
+                    this.AsepriteAnimation.Play(gameTime, "jump_atack");
 
-                if (AsepriteAnimation.lastFrame)
-                {
-                    if (_isGround)
-                        this.CurrentAnimation = AnimationTypes.IDLE;
-                    else
-                        this.CurrentAnimation = AnimationTypes.JUMP;
-                    _isAtacking = false;
-                    this.RemoveSwordHitBox();
-                }
+                    if (AsepriteAnimation.lastFrame)
+                    {
+                        if (_isGround)
+                            this.CurrentAnimation = AnimationTypes.IDLE;
+                        else
+                            this.CurrentAnimation = AnimationTypes.JUMP;
+                        _isAtacking = false;
+                        this.RemoveSwordHitBox();
+                    }
+                    break;
+                case AnimationTypes.WALK:
+                    this.AsepriteAnimation.Play(gameTime, "walk");
+                    break;
             }
-            else if (this.CurrentAnimation == AnimationTypes.WALK)
-                this.AsepriteAnimation.Play(gameTime, "walk");
 
             this.Body = this.AsepriteAnimation.Body;
 

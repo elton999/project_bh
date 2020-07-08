@@ -36,8 +36,15 @@ namespace Project_BH
             AssetManagement = new AssetManagement();
             AssetManagement.Scene = this.Scene;
 
+            // Player
             AssetManagement.Set<Player>("player");
+
+            // Enemies
             AssetManagement.Set<Knight>("knight");
+            AssetManagement.Set<Troll>("troll");
+            AssetManagement.Set<TrollPoint>("troll_point");
+
+            // Stairs
             AssetManagement.Set<Gameplay.UpStairsRight>("hitbox_upstairs_right");
             AssetManagement.Set<Gameplay.UpStairsLeft>("hitbox_upstairs_left");
             AssetManagement.Set<Gameplay.DownStairsLeft>("hitbox_downstairs_left");
@@ -47,6 +54,7 @@ namespace Project_BH
             Scene.AssetManagement = this.AssetManagement;
             Scene.Content = Content;
             Scene.ScreemGraphicsDevice = GraphicsDevice;
+            Scene.Screem = ScreemController;
             Scene.World = new World(new Vector2(0, 10));
             Scene.SetBackgroundColor = Color.CornflowerBlue;
             Scene.SetLevel(1);
@@ -72,7 +80,7 @@ namespace Project_BH
 
             for(int i = 0; i < 4; i++) this.Scene.World.Step(gameTime.ElapsedGameTime);
             
-            if (_target_y == 0) _target_y = Scene.Players[0].CBody.Position.Y;
+            if (_target_y == 0) _target_y = Scene.Players[0].CBody.Position.Y - (8*7);
             CameraManagement.Target = new Vector2(-Scene.Players[0].CBody.Position.X, -_target_y);
             
             ScreemController.Update(gameTime);

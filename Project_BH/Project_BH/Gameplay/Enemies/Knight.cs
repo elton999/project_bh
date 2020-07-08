@@ -33,12 +33,18 @@ namespace Project_BH.Gameplay.Enemies
             this.CBody.BodyType = BodyType.Dynamic;
             this.CBody.SetCollidesWith(Category.Cat1);
             this.CBody.SetFriction(1);
+
+            this.DontCollisionWithTag.Add("Player");
+            this.DontCollisionWithTag.Add("Knight");
+            this.DontCollisionWithTag.Add("Troll");
+
+            this.VigiliantModeActive = true;
         }
 
         public override void OnCollision(string tag)
         {
             if (tag == "PlayerSword")
-                this.RemoveFromScene = true;
+                this.Destroy();
         }
 
         

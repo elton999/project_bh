@@ -206,12 +206,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
   </layer>
-  <objectgroup id="7" name="stairs">
-   <object id="7" name="hitbox_upstairs_right" type="hitbox_upstairs_right" x="168" y="239" width="40" height="1"/>
-   <object id="12" name="hitbox_downstairs_left" type="hitbox_downstairs_left" x="304" y="95" width="40" height="1"/>
-   <object id="13" name="hitbox_downstairs_right" type="hitbox_downstairs_right" x="416" y="95" width="40" height="1"/>
-   <object id="14" name="hitbox_upstairs_left" type="hitbox_upstairs_left" x="552" y="239" width="40" height="1"/>
-  </objectgroup>
+  <objectgroup id="7" name="stairs"/>
  </group>
  <group id="3" name="player">
   <objectgroup id="4" name="player">

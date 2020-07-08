@@ -7,7 +7,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{29E3AE39-8DC3-4B76-9861-7F1F7108589C}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Project_BH</RootNamespace>
     <AssemblyName>Project_BH</AssemblyName>
@@ -41,12 +41,17 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
     <Compile Include="Gameplay\DownStairsLeft.cs" />
     <Compile Include="Gameplay\DownStairsRight.cs" />
+    <Compile Include="Gameplay\Enemies\EnemiesPoint.cs" />
     <Compile Include="Gameplay\Enemies\Enemy.cs" />
     <Compile Include="Gameplay\Enemies\Knight.cs" />
+    <Compile Include="Gameplay\Enemies\Troll.cs" />
     <Compile Include="Gameplay\Stairs.cs" />
     <Compile Include="Gameplay\UpStairsLeft.cs" />
     <Compile Include="Gameplay\UpStairsRight.cs" />

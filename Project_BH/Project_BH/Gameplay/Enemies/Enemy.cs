@@ -33,56 +33,64 @@ namespace Project_BH.Gameplay.Enemies
                 this.spriteEffect = SpriteEffects.FlipHorizontally;
         }
 
-        bool _right = true;
+        public void Destroy()
+        {
+            this.RemoveFromScene = true;
+        }
+
+        public bool _right = true;
+        public bool VigiliantModeActive = false;
         public void VigiliantMode()
         {
-
-            bool _turn = false;
-            // check the way
-            List<Fixture>  fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X - 7, this.CBody.Position.Y + 20));
-            if (!_right)
+            if (VigiliantModeActive)
             {
-                _turn = true;
+                bool _turn = false;
+                // check the way
+                List<Fixture> fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X - 7, this.CBody.Position.Y + 20));
+                if (!_right)
+                {
+                    _turn = true;
+                    foreach (Fixture fixture in fixtures)
+                    {
+                        if (fixture != null && (string)fixture.Body.Tag == "ground")
+                            _turn = false;
+                    }
+                }
+
+                fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X + 7, this.CBody.Position.Y + 20));
+                if (_right)
+                {
+                    _turn = true;
+                    foreach (Fixture fixture in fixtures)
+                    {
+                        if (fixture != null && (string)fixture.Body.Tag == "ground")
+                            _turn = false;
+                    }
+                }
+
+                fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X - 6, this.CBody.Position.Y + 16));
                 foreach (Fixture fixture in fixtures)
                 {
-                    if (fixture != null && (string)fixture.Body.Tag == "ground")
-                        _turn = false;
+                    if (fixture != null && (string)fixture.Body.Tag == "ground" && !_right)
+                        _turn = true;
                 }
-            }
 
-            fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X + 7, this.CBody.Position.Y + 20));
-            if (_right)
-            {
-                _turn = true;
+                fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X + 6, this.CBody.Position.Y + 16));
                 foreach (Fixture fixture in fixtures)
                 {
-                    if (fixture != null && (string)fixture.Body.Tag == "ground")
-                        _turn = false;
+                    if (fixture != null && (string)fixture.Body.Tag == "ground" && _right)
+                        _turn = true;
                 }
-            }
 
-            fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X - 6, this.CBody.Position.Y + 16));
-            foreach (Fixture fixture in fixtures)
-            {
-                if (fixture != null && (string)fixture.Body.Tag == "ground" && !_right)
-                    _turn = true;
-            }
 
-            fixtures = this.World.TestPointAll(new Vector2(this.CBody.Position.X + 6, this.CBody.Position.Y + 16));
-            foreach (Fixture fixture in fixtures)
-            {
-                if (fixture != null && (string)fixture.Body.Tag == "ground" && _right)
-                    _turn = true;
-            }
-            
-            
-            if (_turn)
-                _right = !_right;
+                if (_turn)
+                    _right = !_right;
 
-            if (_right)
-                this.CBody.SetTransform(new Vector2(this.CBody.Position.X + 1, this.CBody.Position.Y), 0f);
-            else
-                this.CBody.SetTransform(new Vector2(this.CBody.Position.X - 1, this.CBody.Position.Y), 0f);
+                if (_right)
+                    this.CBody.SetTransform(new Vector2(this.CBody.Position.X + 1, this.CBody.Position.Y), 0f);
+                else
+                    this.CBody.SetTransform(new Vector2(this.CBody.Position.X - 1, this.CBody.Position.Y), 0f);
+            }
         }
     }
 }
