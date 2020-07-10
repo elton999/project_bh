@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="Gameplay\Enemies\Bat.cs" />
     <Compile Include="Gameplay\DownStairsLeft.cs" />
     <Compile Include="Gameplay\DownStairsRight.cs" />
     <Compile Include="Gameplay\Enemies\EnemiesPoint.cs" />

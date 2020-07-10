@@ -304,6 +304,7 @@ namespace Project_BH
 
         #region Update
         float _velocity = 2f;
+        float _velocityJump = 1.5f;
         float _velocityOnStairs = 2f;
         bool _isFall = true;
         bool _isPressJump = false;
@@ -323,7 +324,10 @@ namespace Project_BH
 
                 if (!_isWall_R && !_isOnStairs && !_goToStairs)
                 {
-                    this.CBody.SetTransform(new Vector2(this.CBody.Position.X + _velocity, this.CBody.Position.Y), this.Rotation);
+                    if(_isGround)
+                        this.CBody.SetTransform(new Vector2(this.CBody.Position.X + _velocity, this.CBody.Position.Y), this.Rotation);
+                    else
+                        this.CBody.SetTransform(new Vector2(this.CBody.Position.X + _velocityJump, this.CBody.Position.Y), this.Rotation);
                     _right = true;
                     if (_isGround)
                         this.CurrentAnimation = AnimationTypes.WALK;
@@ -361,7 +365,10 @@ namespace Project_BH
 
                 if (!_isWall_L && !_isOnStairs && !_goToStairs)
                 {
-                    this.CBody.SetTransform(new Vector2(this.CBody.Position.X - _velocity, this.CBody.Position.Y), this.Rotation);
+                    if(_isGround)
+                        this.CBody.SetTransform(new Vector2(this.CBody.Position.X - _velocity, this.CBody.Position.Y), this.Rotation);
+                    else
+                        this.CBody.SetTransform(new Vector2(this.CBody.Position.X - _velocityJump, this.CBody.Position.Y), this.Rotation);
                     _right = false;
                     if (_isGround)
                         this.CurrentAnimation = AnimationTypes.WALK;

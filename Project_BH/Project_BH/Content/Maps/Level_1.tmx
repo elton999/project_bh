@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="300" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="15">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="300" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="24">
  <tileset firstgid="1" source="Tileset/Tilemap.tsx"/>
  <group id="2" name="middleground">
   <layer id="1" name="middleground" width="300" height="100">
@@ -108,7 +108,7 @@
   </layer>
   <objectgroup id="5" name="middleground">
    <object id="2" name="knight" type="knight" x="343" y="720" width="10" height="32"/>
-   <object id="3" name="knight" type="knight" x="647" y="720" width="10" height="32"/>
+   <object id="3" name="knight" type="knight" x="1551" y="696" width="10" height="32"/>
    <object id="4" name="hitbox_upstairs_right" type="hitbox_upstairs_right" x="1080" y="631" width="40" height="1"/>
    <object id="5" name="hitbox_downstairs_left" type="hitbox_downstairs_left" x="1168" y="535" width="40" height="1"/>
    <object id="6" name="hitbox_upstairs_right" type="hitbox_upstairs_right" x="840" y="727" width="40" height="1"/>
@@ -116,6 +116,14 @@
    <object id="8" name="hitbox_downstairs_right" type="hitbox_downstairs_right" x="999" y="631" width="40" height="1"/>
    <object id="9" name="hitbox_upstairs_left" type="hitbox_upstairs_left" x="1088" y="727" width="40" height="1"/>
    <object id="14" name="troll_point" type="troll_point" x="792" y="720" width="8" height="8"/>
+   <object id="15" name="troll_point" type="troll_point" x="980" y="624" width="8" height="8"/>
+   <object id="16" name="knight" type="knight" x="646" y="719" width="10" height="32"/>
+   <object id="17" name="troll_point" type="troll_point" x="1384" y="720" width="8" height="8"/>
+   <object id="18" name="troll_point" type="troll_point" x="1784" y="720" width="8" height="8"/>
+   <object id="20" name="troll_point" type="troll_point" x="1984" y="720" width="8" height="8"/>
+   <object id="21" name="air_attack_point" type="air_attack_point" x="952" y="648" width="8" height="8"/>
+   <object id="22" name="air_attack_point" type="air_attack_point" x="1227" y="551" width="8" height="8"/>
+   <object id="23" name="air_attack_point" type="air_attack_point" x="1575" y="641" width="8" height="8"/>
   </objectgroup>
  </group>
  <group id="3" name="player">

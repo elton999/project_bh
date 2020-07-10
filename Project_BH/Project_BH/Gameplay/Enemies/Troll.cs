@@ -61,11 +61,11 @@ namespace Project_BH.Gameplay.Enemies
         public override void Update(GameTime gameTime)
         {
             this.AnimationUpdate(gameTime);
-            this.VigiliantMode();
+            if(this.CurrentAnimation != AnimationType.DEATH)
+                this.VigiliantMode();
             this.CheckDirection();
         }
-
-
+        
         public enum AnimationType {WALK, BORN, DEATH}
         private AnimationType CurrentAnimation;
 

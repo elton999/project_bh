@@ -34,6 +34,18 @@
 /processor:TileSetProcessor
 /build:Maps/Tileset/Tilemap.tsx
 
+#begin Sprites/Enemies/bat.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Enemies/bat.png
+
 #begin Sprites/Enemies/troll.png
 /importer:TextureImporter
 /processor:TextureProcessor

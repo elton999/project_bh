@@ -43,6 +43,7 @@ namespace Project_BH
             AssetManagement.Set<Knight>("knight");
             AssetManagement.Set<Troll>("troll");
             AssetManagement.Set<TrollPoint>("troll_point");
+            AssetManagement.Set<AirEnemyPoint>("air_attack_point");
 
             // Stairs
             AssetManagement.Set<Gameplay.UpStairsRight>("hitbox_upstairs_right");
@@ -62,7 +63,7 @@ namespace Project_BH
 
             CameraManagement = new CameraManagement();
             CameraManagement.ScreemTargetAreaLimits = new Vector2(100, 100);
-            // CameraManagement.MoveSpeed = 6.5f;
+            CameraManagement.MoveSpeed = 5f;
             ScreemController.CameraManagement = CameraManagement;
             ScreemController.Scene = Scene;
         }
@@ -80,7 +81,7 @@ namespace Project_BH
 
             for(int i = 0; i < 4; i++) this.Scene.World.Step(gameTime.ElapsedGameTime);
             
-            if (_target_y == 0) _target_y = Scene.Players[0].CBody.Position.Y - (8*7);
+            if (_target_y == 0) _target_y = Scene.Players[0].CBody.Position.Y - (8*8);
             CameraManagement.Target = new Vector2(-Scene.Players[0].CBody.Position.X, -_target_y);
             
             ScreemController.Update(gameTime);

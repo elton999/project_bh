@@ -37,4 +37,20 @@ namespace Project_BH.Gameplay.Enemies
             base.CreateEnemie();
         }
     }
+
+    public class AirEnemyPoint : EnemiesPoint
+    {
+        public override void CreateEnemie()
+        {
+            Bat bat = new Bat();
+            bat.Position = new Vector2(this.Position.X, this.Position.Y);
+            bat.Target = this.Scene.Players[0].CBody.Position;
+            bat.Scene = this.Scene;
+            this.Scene.Enemies.Add(bat);
+            bat.Content = Content;
+            bat.World = this.World;
+            bat.Start();
+            base.CreateEnemie();
+        }
+    }
 }

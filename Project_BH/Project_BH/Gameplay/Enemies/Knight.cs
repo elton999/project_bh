@@ -52,10 +52,15 @@ namespace Project_BH.Gameplay.Enemies
         {
             this.AsepriteAnimation.Play(gameTime, "idle");
             this.Body = this.AsepriteAnimation.Body;
+            
+        }
+        public override void OnVisible()
+        {
             this.VigiliantMode();
             this.CheckDirection();
+            base.OnInvisible();
         }
-        
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             this.DrawSprite(spriteBatch);
